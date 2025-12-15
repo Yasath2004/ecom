@@ -44,7 +44,7 @@
     --color-orange: #ff9900;
     --color-link-hover: #ffffff;
     --color-link-default: #b4b4b4;
-    --color-service-active: #007bff; /* Used blue to represent the active line in the image */
+    --color-service-active: #000000ff; /* Used blue to represent the active line in the image */
 }
 body {
     background-color: var(--color-dark-bg);
@@ -62,7 +62,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
-    background-color: #0d0d0d;
+    background-color: #000000ff;
     position: sticky;
     top: 0;
     z-index: 100;

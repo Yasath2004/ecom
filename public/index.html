@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ceygenic - Inspiring Humanity</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="script.js">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     </head>
 <body>
@@ -12,13 +13,19 @@
     <header class="header">
         <div class="logo">Ceygenic</div>
         <nav class="navbar">
-            <ul>
-                <li><a href="#">Industries</a></li>
+            <div class="logo">
+                <span class="logo-icon">C</span> Ceygenic
+            </div>
+            <!-- Added ID for easier selection if needed, but class works too -->
+            <ul class="nav-links">
+                <!-- 'Industries' starts as active -->
+                <li><a href="#" class="active">Industries</a></li>
                 <li><a href="#">Solutions</a></li>
                 <li><a href="#">Customers Success</a></li>
                 <li><a href="#">Partners</a></li>
                 <li><a href="#">About</a></li>
             </ul>
+            <a href="#" class="btn-outline">Get a Quote</a>
         </nav>
         <a href="#" class="btn-quote">Get a Quote</a>
     </header>

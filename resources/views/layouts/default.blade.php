@@ -6,8 +6,10 @@
     <title>@yield('title', 'Ceygenic - Inspiring Humanity')</title>
     
     {{-- Main Stylesheet Link --}}
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    
+    <link rel="stylesheet" href="{{ asset('styles.css') }}">
+    {{-- js --}}
+    <script src="{{ asset('script.js') }}" defer></script>
+
     {{-- Google Fonts --}}
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
@@ -17,11 +19,15 @@
 <body>
 
     {{-- 1. Header/Navigation --}}
-    <header class="header">
+   <header class="header">
         <div class="logo">Ceygenic</div>
         <nav class="navbar">
-            <ul>
-                <li><a href="#">Industries</a></li>
+            <div class="logo">  
+            </div>
+            <!-- Added ID for easier selection if needed, but class works too -->
+            <ul class="nav-links">
+                <!-- 'Industries' starts as active -->
+                <li><a href="#" class="active">Industries</a></li>
                 <li><a href="#">Solutions</a></li>
                 <li><a href="#">Customers Success</a></li>
                 <li><a href="#">Partners</a></li>
@@ -30,6 +36,9 @@
         </nav>
         <a href="#" class="btn-quote">Get a Quote</a>
     </header>
+    
+
+     {{-- Main Content Area --}
 
     <main>
         {{-- 2. Hero Section --}}

@@ -30,116 +30,288 @@
     </div>
 
     <style>
-        /* --- CUSTOM STYLES PROVIDED BY USER --- */
-        body {
-            background-color: #f4f6f9;
-            font-family: 'Poppins', sans-serif;
-        }
+        {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        .hero-section {
-            background: linear-gradient(135deg, #eaf1ff, #ffffff);
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
+        :root {
+    --color-dark-bg: #111111;
+    --color-medium-bg: #212121;
+    --color-light-text: #ffffff;
+    --color-orange: #ff9900;
+    --color-link-hover: #ffffff;
+    --color-link-default: #b4b4b4;
+    --color-service-active: #007bff; /* Used blue to represent the active line in the image */
+}
+body {
+    background-color: var(--color-dark-bg);
+    color: var(--color-light-text);
+    line-height: 1.6;
+}
 
-        .hero-section:hover {
-            transform: scale(1.01);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-        }
+.highlight-orange {
+    color: var(--color-orange);
+}
 
-        .hero-image {
-            max-width: 80%;
-            border-radius: 20px;
-            animation: float 4s ease-in-out infinite;
-        }
+/* --- 1. Header/Navigation --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #0d0d0d;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0); }
-        }
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+}
 
-        .btn {
-            border-radius: 10px;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
 
-        .feature-card {
-            border-radius: 16px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%; /* Ensures all cards are the same height */
-        }
+.navbar ul li a {
+    text-decoration: none;
+    color: var(--color-light-text);
+    padding: 10px 15px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-        }
+.navbar ul li:first-child a {
+    /* For the active 'Industries' link */
+    color: var(--color-orange);
+    font-weight: 600;
+}
 
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-        }
+.btn-quote {
+    text-decoration: none;
+    color: var(--color-light-text);
+    border: 1px solid var(--color-light-text);
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* --- 2. Hero Section --- */
+.hero-section {
+    position: relative;
+    height: 70vh; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    
+    /* Background Image setup (simulating the VR headset image) */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('your-vr-image.jpg'); /* REPLACE with actual image path */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.1;
+    max-width: 600px;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #555;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: var(--color-light-text);
+}
+
+
+/* --- 3. Services Bar --- */
+.services-bar {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid var(--color-service-active);
+    /* Push the bar to the bottom edge of the hero section visually */
+    margin-top: -2px; 
+    padding-top: 5px; 
+    background-color: var(--color-dark-bg);
+}
+
+.service-item {
+    padding: 15px 0;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    color: var(--color-light-text);
+    opacity: 0.6;
+    flex-grow: 1; /* Makes them take equal space */
+}
+
+.service-item.active {
+    color: var(--color-orange); /* Active text color */
+    opacity: 1;
+}
+
+.service-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Pulls the line down to sit on top of the border */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-service-active); 
+}
+
+/* --- 4. Main Content Section (Grid Layout) --- */
+.main-content-area {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Left column slightly smaller */
+    gap: 30px;
+    padding: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Left Column Styling */
+.left-column {
+    padding-right: 50px; /* Separator space */
+    position: relative;
+}
+
+.about-us-card {
+    background-color: transparent;
+}
+
+.small-label {
+    color: var(--color-orange);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.profile-area {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-orange); /* Placeholder for the circular image */
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 3px solid var(--color-dark-bg);
+    box-shadow: 0 0 0 4px var(--color-orange); /* Halo effect */
+}
+
+.about-us-card h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+/* Right Column Styling */
+.right-column {
+    background-color: var(--color-medium-bg);
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.industry-expertise-card {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.toggle-icon {
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.industry-expertise-card p {
+    color: var(--color-link-default);
+    font-size: 14px;
+}
+
+.feature-list .feature-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+    font-weight: 400;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.feature-list .feature-item:hover {
+    color: var(--color-orange);
+}
+
+.arrow-icon {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-orange);
+}
+
+
+/* Back to Top Button Styling */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #333;
+    color: var(--color-light-text);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
     </style>
-</head>
-<body>
 
-    <div class="container my-5">
-        
-        <section class="hero-section p-5 mb-5 shadow-sm">
-            <div class="row align-items-center">
-                
-                {{-- Left Side: Text Content --}}
-                <div class="col-md-6 text-center text-md-start">
-                    <h1 class="display-4 fw-bold text-dark mb-4">
-                        Unlock Your Potential <span class="text-primary">with Cutting-Edge Tools</span>
-                    </h1>
-                    <p class="lead text-muted mb-4">
-                        Our platform provides innovative solutions designed for rapid growth and seamless integration into your workflow.
-                    </p>
-                    <a href="#" class="btn btn-primary btn-lg me-3">Get Started Now</a>
-                    <a href="#" class="btn btn-outline-secondary btn-lg">Learn More</a>
-                </div>
 
-                {{-- Right Side: Floating Image --}}
-                <div class="col-md-6 text-center mt-4 mt-md-0">
-                    <img src="{{ asset('images/mockup-screen.png') }}" alt="App Mockup" class="hero-image shadow-lg">
-                </div>
-            </div>
-        </section>
 
-        <section class="features-section py-5">
-            <h2 class="text-center mb-5 fw-bold text-dark">Why Choose Us?</h2>
-            
-            <div class="row g-4">
-                
-                {{-- Feature Card 1 --}}
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card bg-white p-4 shadow-sm">
-                        <img src="{{ asset('icons/rocket.svg') }}" alt="Speed Icon" class="feature-icon mb-3">
-                        <h3 class="fw-semibold text-dark">Blazing Fast Performance</h3>
-                        <p class="text-muted">Experience minimal latency with our optimized cloud infrastructure. Deploy instantly.</p>
-                    </div>
-                </div>
-
-                {{-- Feature Card 2 --}}
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card bg-white p-4 shadow-sm">
-                        <img src="{{ asset('icons/security.svg') }}" alt="Security Icon" class="feature-icon mb-3">
-                        <h3 class="fw-semibold text-dark">Enterprise-Grade Security</h3>
-                        <p class="text-muted">Your data is protected with 256-bit encryption and continuous threat monitoring.</p>
-                    </div>
-                </div>
-
-                {{-- Feature Card 3 --}}
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card bg-white p-4 shadow-sm">
-                        <img src="{{ asset('icons/support.svg') }}" alt="Support Icon" class="feature-icon mb-3">
-                        <h3 class="fw-semibold text-dark">24/7 Dedicated Support</h3>
-                        <p class="text-muted">Our expert team is always available to help you succeed, any time, any day.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
 @endsection

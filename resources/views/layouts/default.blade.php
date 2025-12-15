@@ -44,11 +44,9 @@
         {{-- 2. Hero Section --}}
         {{-- This section is likely static for the home page, but you can make it dynamic if needed --}}
         <section class="hero-section">
-            
             <div class="hero-content">
                 <h1>Inspiring <span class="highlight-orange">Humanity</span><br>Through Cutting Edged<br><span class="highlight-orange">Technology</span></h1>
             </div>
-           
             <div class="slider-dots">
                 <span class="dot active"></span>
                 <span class="dot"></span>
@@ -76,53 +74,7 @@
     <button class="back-to-top" title="Back to Top">↑</button>
 
     {{-- Stack for custom JavaScript at the end of the body --}}
-    @stack('scripts'))
-    
-<style>
-    .hero-section {
-    padding: 0 5%;
-}
+    @stack('scripts')
 
-/* .hero-card {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&q=80&w=1200'); /* VR placeholder */
-    background-size: cover;
-    background-position: center;
-    height: 500px;
-    border-radius: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-} */
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    max-width: 800px;
-    font-weight: 700;
-}
-
-.slider-dots {
-    position: absolute;
-    bottom: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.slider-dots span {
-    width: 8px;
-    height: 8px;
-    background: #555;
-    border-radius: 50%;
-}
-
-.slider-dots span.active {
-    background: #fff;
-    width: 20px;
-    border-radius: 10px;
-}
-</style>
 </body>
 </html>

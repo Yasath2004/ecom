@@ -86,9 +86,10 @@ body {
     transition: color 0.3s;
 }
 
-.navbar ul li a.active,
-.navbar ul li a:hover { 
+.navbar ul li:first-child a {
+    /* For the active 'Industries' link */
     color: var(--color-orange);
+    font-weight: 600;
 }
 
 .btn-quote {
@@ -113,7 +114,7 @@ body {
     background-size: cover;
     background-position: center;
 }
-var(--color-orange)
+
 .hero-content h1 {
     font-size: 60px;
     font-weight: 800;
